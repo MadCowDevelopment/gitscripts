@@ -1,0 +1,17 @@
+[alias]
+	pl = pull --rebase
+	co = "!f(){ git checkout \"$1\" && git branch; }; f"
+	e = config --global -e
+	b = branch --all
+	f = fetch --prune
+	rc = rebase --continue
+	rs = rebase --skip
+	ra = rebase --abort
+	ri = "!f(){ git rebase --interactive head~\"$1\"; }; f"
+	new = "!f(){ git checkout master && git pull && git checkout -b mgr-\"$1\" && git push --set-upstream origin mgr-\"$1\" && git b; }; f"
+	fl = log -u
+	ls = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]--decorate
+	ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]--decorate --numstat
+	dl = !git ll -1
+[rerere]
+	enabled = true

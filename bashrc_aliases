@@ -1,0 +1,22 @@
+alias g='git'
+alias gs='g status'
+alias ge='g e'
+alias gn='g new'
+alias gb='g b'
+alias gl='g ls'
+alias gf='g f'
+alias go='g co'
+
+alias gp='g push'
+alias gpf='g push --force'
+
+alias grc='g rc'
+alias grs='g rs'
+alias gra='g ra'
+alias gri='g ri'
+alias gro='g rebase --onto'
+
+alias grm='g pull origin master --rebase'
+
+alias fix='~/gitscripts/fix.sh'
+alias getlatest='~/gitscripts/getlatest.sh'

@@ -1,0 +1,32 @@
+#!/bin/bash
+echo ------------------------------------------------
+echo - FIX: This command will fix all your branches -
+echo ------------------------------------------------
+
+PREFIX="mgr-"
+LOCAL=$(git for-each-ref --format='%(refname:short)' refs/heads/ | grep $PREFIX)
+echo The following branches have been found:
+readarray -t LOCAL_BRANCHES <<< $LOCAL
+for i in "${LOCAL_BRANCHES[@]}"; do
+     echo $i
+done
+
+#echo Are you sure you want to fix them?
+#OPTIONS="Yes No"
+#select opt in $OPTIONS; do
+#	if [ "$opt" = "No" ]; then
+#		echo Another time then...
+#        exit
+#	fi
+#done
+
+for i in "${LOCAL_BRANCHES[@]}"; do
+	read -rsp $'Press any key to fix branch $i...\n' -n 1 key
+	OLDPARENT=`git merge-base master $i`
+	NEWPARENT=`git rev-parse origin/master`
+	git checkout $i
+	echo git rebase --onto $NEWPARENT $OLDPARENT
+done
+
+git checkout master
+git reset --hard origin/master
