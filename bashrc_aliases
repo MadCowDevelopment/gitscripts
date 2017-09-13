@@ -20,3 +20,5 @@ alias grm='g pull origin master --rebase'
 
 alias fix='~/gitscripts/fix.sh'
 alias getlatest='~/gitscripts/getlatest.sh'
+
+echo Wake up, Neo...
