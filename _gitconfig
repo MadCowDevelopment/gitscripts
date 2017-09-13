@@ -8,7 +8,7 @@
 	rs = rebase --skip
 	ra = rebase --abort
 	ri = "!f(){ git rebase --interactive head~\"$1\"; }; f"
-	new = "!f(){ git checkout master && git pull && git checkout -b mgr-\"$1\" && git push --set-upstream origin mgr-\"$1\" && git b; }; f"
+	new = "!f(){ git checkout master && git pull && git checkout -b \"$1\" && git push --set-upstream origin \"$1\" && git b; }; f"
 	fl = log -u
 	ls = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]--decorate
 	ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]--decorate --numstat
