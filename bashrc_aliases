@@ -6,10 +6,10 @@ alias gb='g b'
 alias gl='g ls'
 alias gf='g f'
 alias go='g co'
-
 alias gp='g push'
 alias gpf='g push --force'
 
+alias gbd='g bd'
 alias grc='g rc'
 alias grs='g rs'
 alias gra='g ra'
