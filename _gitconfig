@@ -1,6 +1,7 @@
 [alias]
 	pl = pull --rebase
 	co = "!f(){ git checkout \"$1\" && git branch; }; f"
+	c = "!f(){ git add . && git commit -m \"$1\"; }; f"
 	e = config --global -e
 	b = branch --all
 	bd = "!f(){ git branch -D \"$1\"; }; f"
